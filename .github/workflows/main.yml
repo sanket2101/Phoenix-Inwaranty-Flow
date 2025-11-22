@@ -31,7 +31,6 @@ jobs:
           newman run 'Inwarranty-flow Collection_JatinImported Copy.postman_collection.json' \
             -e QA.postman_environment.json \
             -r cli,htmlextra \
-            -d testdata.csv
 
       - name: Upload Report
         if: always()
