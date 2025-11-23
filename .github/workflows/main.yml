@@ -4,9 +4,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-  schedule:
-    - cron: "30 2 * * *"     # 8:00 AM IST
-    - cron: "30 13 * * *"    # 7:00 PM IST
+# schedule:
+#   - cron: "30 2 * * *"     # 8:00 AM IST
+#   - cron: "30 13 * * *"    # 7:00 PM IST
 
 jobs:
   run-tests:
@@ -47,22 +47,24 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: newman/
 
-      - name: send email notification
+      - name: Send Email Notification
         if: always()
         uses: dawidd6/action-send-mail@v6
         with:
           server_address: smtp.gmail.com
           server_port: 465
-          username: ${{ secrets.EMAIL.USERNAME}}
-          password: ${{ secrets.EMAIL.PASSWORD}}
-          subject: Phoenix Inwaranty Flow Test Execution notification
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: Phoenix Inwaranty Flow Test Execution Notification
           to: sanketpatil2101@gmail.com
           from: ${{ secrets.EMAIL_USERNAME }}
           body: |
-            Hi, 
-            
-            Phoenix Inwarranty flow tests has been executed. The Report has been published and the URL is
+            Hi,
+
+            Phoenix Inwarranty flow tests have been executed.
+            The report has been published and the URL is:
             https://sanket2101.github.io/Phoenix-Inwaranty-Flow/
+
         
           
           
