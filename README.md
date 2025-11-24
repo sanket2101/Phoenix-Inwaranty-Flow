@@ -67,8 +67,7 @@ You can run the project on your local system for that:
 
 5. Run the Newman Command:
 
-        Inwarranty-flow Collection_JatinImported Copy.postman_collection.json \
+        newman run 'Inwarranty-flow Collection_JatinImported Copy.postman_collection.json' \
         -e QA.postman_environment.json \
-        -d testdata.csv \
         -r cli,htmlextra \
         --reporter-htmlextra-export ./newman/index.html
