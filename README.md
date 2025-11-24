@@ -1,7 +1,7 @@
 ## Postman API Automation Integration with Github Actions ##
 
 This repository is a demonstration for POC for integrating Postman tests with GitHub Actions. The tests are written in Postman and they are executed on the VM with the help of newman and newman-reporter-htmlextra.
-GitHub Actions will trigger the project execution on every push to the main branch. You can also execute the project manually using workflow_dispatch. The project runs on a scheduled time with the help of cron.
+GitHub Actions will trigger the project execution on every push to the main branch. You can also execute the project manually using workflow_dispatch. The project runs on a scheduled time with the help of cron job.
 
 The HTML report is archived and kept in the artifact section for the team to download it. Along with that, they can view the report directly from the GitHub page:
 https://sanket2101.github.io/Phoenix-Inwaranty-Flow/
